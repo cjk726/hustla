@@ -5,6 +5,10 @@ class Neighborhood < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :bookmarks,
+             :through => :venues,
+             :source => :bookmarks
+
   has_many   :pool_tables,
              :through => :venues,
              :source => :pool_tables

@@ -12,6 +12,10 @@ class Bookmark < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :neighborhood,
+             :through => :venue,
+             :source => :neighborhood
+
   # Validations
 
 end
