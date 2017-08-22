@@ -1,5 +1,7 @@
 ActiveAdmin.register Bookmark do
 
+ permit_params :venue_id, :pool_table_id, :user_id, :comments
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
