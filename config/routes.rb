@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Pool_table resource:
+  # CREATE
+  get "/pool_tables/new", :controller => "pool_tables", :action => "new"
+  post "/create_pool_table", :controller => "pool_tables", :action => "create"
+
+  # READ
+  get "/pool_tables", :controller => "pool_tables", :action => "index"
+  get "/pool_tables/:id", :controller => "pool_tables", :action => "show"
+
+  # UPDATE
+  get "/pool_tables/:id/edit", :controller => "pool_tables", :action => "edit"
+  post "/update_pool_table/:id", :controller => "pool_tables", :action => "update"
+
+  # DELETE
+  get "/delete_pool_table/:id", :controller => "pool_tables", :action => "destroy"
+  #------------------------------
+
   # Routes for the Venue resource:
   # CREATE
   get "/venues/new", :controller => "venues", :action => "new"
