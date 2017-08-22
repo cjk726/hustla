@@ -63,6 +63,41 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_bookmark" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for venue_id -->
+      <input type="hidden" name="venue_id" value="<%= @venue.id %>">
+
+      <!-- Label and input for pool_table_id -->
+      <div class="form-group">
+        <label for="pool_table_id" class="control-label">
+          Pool table
+        </label>
+
+        <%= select_tag(:pool_table_id, options_from_collection_for_select(PoolTable.all, :id, :pool_table_name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for comments -->
+      <div class="form-group">
+        <label for="comments" class="control-label">
+          Comments
+        </label>
+
+        <input type="text" id="comments" name="comments" placeholder="Comments" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Bookmark
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -94,6 +129,56 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_pool_table" method="post" enctype="multipart/form-data">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for pool_table_name -->
+      <div class="form-group">
+        <label for="pool_table_name" class="control-label">
+          Pool table name
+        </label>
+
+        <input type="text" id="pool_table_name" name="pool_table_name" placeholder="Pool table name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for size -->
+      <div class="form-group">
+        <label for="size" class="control-label">
+          Size
+        </label>
+
+        <input type="text" id="size" name="size" placeholder="Size" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for pool_table_pic -->
+      <div class="form-group">
+        <label for="pool_table_pic" class="control-label">
+          Pool table pic
+        </label>
+
+        <input type="file" id="pool_table_pic" name="pool_table_pic" class="form-control">
+      </div>
+
+      <!-- Label and input for venue_id -->
+      <input type="hidden" name="venue_id" value="<%= @venue.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Pool Table
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

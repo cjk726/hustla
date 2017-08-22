@@ -6,6 +6,7 @@ class PoolTablesController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
     @pool_table = PoolTable.find(params[:id])
 
     render("pool_tables/show.html.erb")
