@@ -1,6 +1,6 @@
 class PoolTablesController < ApplicationController
   def index
-    @pool_tables = PoolTable.all
+    @pool_tables = PoolTable.page(params[:page]).per(10)
 
     render("pool_tables/index.html.erb")
   end
