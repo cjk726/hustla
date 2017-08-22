@@ -1,0 +1,1 @@
+{"name":"Hustla","repository":"https://github.com/cjk726/hustla","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
