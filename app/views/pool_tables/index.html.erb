@@ -22,7 +22,7 @@
         <td><%= pool_table.pool_table_name %></td>
         <td><%= pool_table.price %></td>
         <td><%= pool_table.size %></td>
-        <td><%= pool_table.pool_table_pic %></td>
+        <td><img src='<%= pool_table.pool_table_pic %>' class='img-responsive'></td>
         <td><%= pool_table.venue.venue_name %></td>
         <td>
           <a href="/pool_tables/<%= pool_table.id %>" class="btn btn-primary">Show</a>

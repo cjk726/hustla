@@ -1,4 +1,6 @@
 class PoolTable < ApplicationRecord
+  mount_uploader :pool_table_pic, PoolTablePicUploader
+
   # Direct associations
 
   has_many   :bookmarks,
