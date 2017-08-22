@@ -18,7 +18,13 @@
       <dd><img src="<%= @pool_table.pool_table_pic %>" class="img-responsive"></dd>
 
       <dt>Venue</dt>
-      <dd><%= @pool_table.venue_id %></dd>
+      <dd>
+        <% if @pool_table.venue.present? %>
+          <a href="/venues/<%= @pool_table.venue_id %>">
+            <%= @pool_table.venue.venue_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
