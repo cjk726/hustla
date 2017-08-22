@@ -9,6 +9,10 @@ class PoolTable < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :neighborhood,
+             :through => :venue,
+             :source => :neighborhood
+
   has_many   :users,
              :through => :bookmarks,
              :source => :user
