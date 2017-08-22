@@ -1,5 +1,7 @@
 ActiveAdmin.register PoolTable do
 
+ permit_params :pool_table_name, :price, :size, :pool_table_pic, :venue_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
