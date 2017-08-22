@@ -33,7 +33,7 @@
           Pool table
         </label>
 
-        <input type="text" id="pool_table_id" name="pool_table_id" placeholder="Pool table" class="form-control" value="<%= @bookmark.pool_table_id %>">
+        <%= select_tag(:pool_table_id, options_from_collection_for_select(PoolTable.all, :id, :pool_table_name, @bookmark.pool_table_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for user_id -->
