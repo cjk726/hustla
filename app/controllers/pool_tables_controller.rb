@@ -1,6 +1,7 @@
 class PoolTablesController < ApplicationController
   def index
-    @pool_tables = PoolTable.page(params[:page]).per(10)
+    @q = PoolTable.ransack(params[:q])
+    @pool_tables = @q.result(:distinct => true).includes(:venue, :bookmarks, :users, :neighborhood).page(params[:page]).per(10)
 
     render("pool_tables/index.html.erb")
   end
